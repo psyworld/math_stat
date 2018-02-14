@@ -1,13 +1,12 @@
-function result = empirical(a, w)
-    x = 0:1:max(a);
-    m = (0) .* (x < x(1));
-    wi = w(1);
-    m += (wi) .* (x(1) <= x & x < x(2));
-    for i=2:(length(x)-1)
-      wi += w(i);
-      m += (wi) .* (x(i) <= x & x < x(i+1));
-    endfor
-    m += (1) .* (x >= x(length(x)));
-    result = m;
-    plot(x, m)
+function result = empirical(x, w)
+  hold on;
+  plot([0,x(1)], [0,0])
+  wi = w(1);
+  for i=1:length(x)-1
+    plot([x(i),x(i+1)],[wi, wi])
+    wi = wi + w(i+1);
+  endfor
+  plot([x(length(x)),x(length(x))+1],[1,1])
+  hold off;
+  result = wi
 endfunction

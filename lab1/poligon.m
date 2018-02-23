@@ -1,4 +1,4 @@
-function result = poligon(array)
+function result = poligon(array);
   n = arrayfun(@(x) sum(array == x), min(array):max(array));
   X = unique(array);
   N = sum(n);

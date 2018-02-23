@@ -48,3 +48,19 @@ sigma_1 = sqrt(db1);
 sigma_2 = sqrt(db2);
 sigma_3 = sqrt(db3);
 
+mode1 = mode(array1);
+mode2 = mode(array2);
+mode3 = mode(array3);
+
+median1 = median(array1);
+median2 = median(array2);
+median3 = median(array3);
+
+skewness1 = skewness(x1, x_1, w1);
+skewness2 = skewness(x2, x_2, w2);
+skewness3 = skewness(x3, x_3, w3);
+
+kurtosis1 = kurtosis(x1, x_1, w1, sigma_1)
+kurtosis2 = kurtosis(x2, x_2, w2, sigma_2)
+kurtosis3 = kurtosis(x3, x_3, w3, sigma_3)
+

@@ -7,15 +7,22 @@ N = 200;
 
 %array1 = normrnd(a, sigma, 1, 200);
 %dlmwrite("1.txt", array1)
+array1_ = dlmread("1.txt");
 array1 = sort(dlmread("1.txt"));
+
 
 %array2 = exprnd(1/lambda,1, 200);
 %dlmwrite("2.txt", array2)
+
 array2 = sort(dlmread("2.txt"));
+array2_ = dlmread("1.txt");
+%array2 = round(array2*100000)/100000;
+%array2_ = round(array2*100000)/100000;
 
 %array3 = unifrnd(a,b, 1, 200);
 %dlmwrite("3.txt", array3)
 array3 = sort(dlmread("3.txt"));
+array3_ = dlmread("3.txt");
 
 [intervals1, wi_1, N1, n1, h1, x_1] = w_i(array1, 1);
 [intervals2, wi_2, N2, n2, h2, x_2] = w_i(array2, 2);
